@@ -75,10 +75,10 @@ func Auth(s Seed, r Seed) bool {
 	return status
 }
 
-func GenerateURL(s Seed) string {
+func GenerateURL(url string, s Seed) string {
 	if s.AmountReceived == 0 {
-		return fmt.Sprintf("https://app.rhizomatiq.dev/transactions/send/%s", s.Hash)
+		return fmt.Sprintf(url, s.Hash)
 	}
 
-	return fmt.Sprintf("https://app.rhizomatiq.dev/transactions/receive/%s", s.Hash)
+	return fmt.Sprintf(url, s.Hash)
 }
